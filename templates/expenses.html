@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Add expense
+{% endblock %}
+
+{% block main %}
+    <div class="wrapper fadeInDown">
+                <div id="formContent">
+                <!-- Tabs Titles -->
+                <h2 class="active"> Add expense </h2>
+
+                <!-- Login Form -->
+                <form action="/expenses" method="post">
+                    <input type="number" class="fadeIn first" id="amount" name="amount" step="0.01" placeholder="0" min="1">
+                    <select id="select" name="category">
+                        <option disabled="" selected="" value="">Select category</option>
+                        <option>Food</option>
+                        <option>Home</option>
+                        <option>Travel</option>
+                        <option>Transport</option>
+                        <option>Car</option>
+                        <option>Bills</option>
+                        <option>Children</option>
+                        <option>Deposit</option>
+                        <option>Health</option>
+                        <option>Beauty</option>
+                        <option>Social</option>
+                        <option>Entertaiment</option>
+                        <option>Other</option>
+                    </select>
+                    <input type="text" class="fadeIn first" name="note" placeholder="Add note">
+                    <input type="submit" class="fadeIn third" value="Submit">
+                </form>
+                </div>
+            </div>
+{% endblock %}

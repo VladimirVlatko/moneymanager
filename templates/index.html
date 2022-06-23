@@ -1,0 +1,77 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+    <div>
+        <h1><span id="output"></span></h1>
+    		<table class="table" style="font-weight: bold;">
+                <tr style="font-size: large;">
+            		<td style="color: green">Incomes</td>
+            		<td style="color: red">Expenses</td>
+            		<td>Balance</td>
+        		</tr>
+                <tr style="font-size: medium;">
+                    <td style="color: green">{{totalINCOMES}}</td>
+                    <td style="color: red">{{totalEXPENSES}}</td>
+                    <td>{{balance}}</td>
+                </tr>
+        	</table>
+        	<script> //Source: https://codepen.io/alberss/pen/QRVYma
+        	var months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+            var now = new Date();
+            var thisMonth = months[now.getMonth()]; // getMonth method returns the month of the date (0-January :: 11-December)
+            var output = document.getElementById('output');
+            console.log(thisMonth);
+
+            if(output.textContent !== undefined) {
+            output.textContent = thisMonth;
+            }
+            else {
+             output.innerText = thisMonth;
+            }
+            </script>
+    </div>
+    <div>
+        <div id="tableleft" style="color: green;">
+            <table class="table">
+                <tr colspan="2"><span style="font-size: large;">INCOMES</span></tr>
+                <tr style="font-weight: bold;">
+            	<td>Income</td>
+            	<td>Category</td>
+            	<td>Time</td>
+            	<td>Note</td>
+                </tr>
+                {% for item in incomes %}
+                <tr>
+                    <td>{{item["amount"]}}</td>
+                    <td>{{item["category"]}}</td>
+                    <td>{{item["time"]}}</td>
+                    <td>{{item["note"]}}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <div id="tableright" style="color: red;">
+            <table class="table">
+                <tr colspan="2"><span style="font-size: large;">EXPENSES</span></tr>
+                <tr style="font-weight: bold;">
+            	<td>Expense</td>
+            	<td>Category</td>
+            	<td>Time</td>
+            	<td>Note</td>
+                </tr>
+                {% for item in expenses %}
+                <tr>
+                    <td>{{item["amount"]}}</td>
+                    <td>{{item["category"]}}</td>
+                    <td>{{item["time"]}}</td>
+                    <td>{{item["note"]}}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+{% endblock %}

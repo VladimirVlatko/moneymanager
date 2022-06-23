@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Annual
+{% endblock %}
+
+{% block main %}
+    <div>
+        <h1>Annual</h1>
+    		<table class="table" style="font-weight: bold;">
+                <tr style="font-size: large;">
+            		<td style="color: green">Incomes</td>
+            		<td style="color: red">Expenses</td>
+            		<td>Balance</td>
+        		</tr>
+                <tr style="font-size: medium;">
+                    <td style="color: green">{{totalINCOMES}}</td>
+                    <td style="color: red">{{totalEXPENSES}}</td>
+                    <td>{{balance}}</td>
+                </tr>
+        	</table>
+    </div>
+    <div>
+        <div id="tableleft" style="color: green;">
+            <table class="table">
+                <tr colspan="2"><span style="font-size: large;">INCOMES</span></tr>
+                <tr style="font-weight: bold;">
+            	<td>Income</td>
+            	<td>Category</td>
+            	<td>Time</td>
+            	<td>Note</td>
+                </tr>
+                {% for item in incomes %}
+                <tr>
+                    <td>{{item["amount"]}}</td>
+                    <td>{{item["category"]}}</td>
+                    <td>{{item["time"]}}</td>
+                    <td>{{item["note"]}}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <div id="tableright" style="color: red;">
+            <table class="table">
+                <tr colspan="2"><span style="font-size: large;">EXPENSES</span></tr>
+                <tr style="font-weight: bold;">
+            	<td>Expense</td>
+            	<td>Category</td>
+            	<td>Time</td>
+            	<td>Note</td>
+                </tr>
+                {% for item in expenses %}
+                <tr>
+                    <td>{{item["amount"]}}</td>
+                    <td>{{item["category"]}}</td>
+                    <td>{{item["time"]}}</td>
+                    <td>{{item["note"]}}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+{% endblock %}

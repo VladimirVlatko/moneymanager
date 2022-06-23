@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log in
+{% endblock %}
+
+{% block main %}
+    <div class="wrapper fadeInDown">
+        <h1>Your personal budget manager</h1>
+        <h1 id="about">Track your incomes and expenses in a very simple and easy way.</h1>
+        <div id="formContent">
+    <!-- Tabs Titles -->
+    <h2 class="active"> Log In </h2>
+
+    <!-- Login Form -->
+    <form action="/login" method="post">
+      <input type="text" id="login" class="fadeIn first" name="username" placeholder="Username">
+      <input type="password" id="password" class="fadeIn first" name="password" placeholder="password">
+      <input type="submit" class="fadeIn third" value="Log In">
+    </form>
+
+    <!-- Remind Passowrd -->
+    <div id="formFooter">
+      <a class="underlineHover" href="/register">Not a user yet? Join now.</a>
+    </div>
+
+        </div>
+    </div>
+{% endblock %}
