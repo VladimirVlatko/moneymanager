@@ -10,3 +10,4 @@
     - On the right side of the navbar the user can see the balance regardless of which page is at the moment. When the user is at the annual page the balance on the navbar also changes.
 5. In the end, the user can log out from the page by clicking the "Log out" which is located on the right side of the navbar.
 6. The web app is also mobile-friendly, so it can be used easily from mobile devices.
+7. You can test the app on the following link: https://ide-04f6206858764afb99ab810b80c166d4-8080.cs50.ws/
